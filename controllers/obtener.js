@@ -8,6 +8,8 @@ const secciones = require('../models/secciones.js');
 const obtenerPensumGet = async(req,res)=>{
 try{
 const data = await pensum.findAll();
+const d = JSON.stringify(data);
+console.log(`datos de la consulta a la tabla pensum ${d}`);
 res.json({status:true,response:'datos listados correctamente',data});
 }catch(error){
 console.error(error.message);
