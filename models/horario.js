@@ -27,5 +27,5 @@ id:{
  	type:DataTypes.STRING(20),
     allowNull:false
  }
-},{timestamps:true});
+},{timestamps:true, freezeTableName: true});
 module.exports= Horarios;

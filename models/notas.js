@@ -7,6 +7,18 @@ const Notas = sequelize.define('Notas',{
 		autoIncrement: true,
 		primaryKey: true,
 	},
+	periodo:{
+		type:DataTypes.STRING(10),
+		allowNull:false
+	},
+	semestre:{
+		type:DataTypes.STRING(10),
+		allowNull:false
+	},
+	nombreEstudiante:{
+		type:DataTypes.STRING(10),
+		allowNull:false
+	},
 	nota:{
 		type:DataTypes.INTEGER,
 		allowNull:false
@@ -19,6 +31,6 @@ const Notas = sequelize.define('Notas',{
 		type:DataTypes.INTEGER,
 		allowNull:false
 	}
-},{timestamps:true});
+},{timestamps:true, freezeTableName: true});
 
 module.exports = Notas;

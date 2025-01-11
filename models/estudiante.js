@@ -67,6 +67,8 @@ const Estudiantes = sequelize.define('estudiantes',{
 		type:DataTypes.STRING(15),
 		allowNull:false
 	}
-},{timestamps:true});
+},{timestamps:true,
+ freezeTableName: true
+});
 
 module.exports = Estudiantes;

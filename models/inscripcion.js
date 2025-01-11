@@ -40,6 +40,6 @@ const Inscripciones = sequelize.define('inscripciones',{
 	type:DataTypes.INTEGER,
 	allowNull:false
 	}
-},{timestamps:true});
+},{timestamps:true, freezeTableName: true});
 
 module.exports=Inscripciones;

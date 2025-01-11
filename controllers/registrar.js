@@ -43,8 +43,8 @@ console.error(error.message);
 //////////////////////////////////////////////////
 const crearInscripcionPost = async(req,res)=>{
 try{
-const {nombreMateria,seccion,horario,uc,cupos,aula,periodo} = req.body;
-await inscripcion.create({nombreMateria,seccion,horario,uc,cupos,aula,periodo});
+const {nombreMateria,seccion,horario,uc,cupos,aula,periodo,estudianteId} = req.body;
+await inscripcion.create({nombreMateria,seccion,horario,uc,cupos,aula,periodo,estudianteId});
 res.json({status:true,response:'inscripcion creado con exito'});
 }catch(error){
 console.error(error.message);
@@ -54,8 +54,8 @@ console.error(error.message);
 //////////////////////////////////////////////////
 const crearNotasPost = async(req,res)=>{
 try{
-  const {nota,materia,uc} = req.body;
-await notas.create({nota,materia,uc});
+  const {periodo,semestre,nombreEstudiante,nota,materia,uc} = req.body;
+await notas.create({periodo,semestre,nombreEstudiante,nota,materia,uc});
 res.json({status:true,response:'nota creado con exito'});
 }catch(error){
   console.error(error.message);
@@ -66,7 +66,7 @@ res.json({status:true,response:'nota creado con exito'});
 const crearSeccionesPost = async(req,res)=>{
 try{
 const {seccion,materia,codigo} = req.body;
-await secciones.create({seccion,seccion,codigo});
+await secciones.create({seccion,materia,codigo});
 res.json({status:true,response:'seccion creada con exito'});
 }catch(error){
 console.error(error.message);

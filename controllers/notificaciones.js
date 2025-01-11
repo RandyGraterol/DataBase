@@ -13,7 +13,7 @@ const crearNoticacionPost = async(req,res)=>{
 //////////////////////////////////////////////////////////////////////////////////////
 const getNotificacion = async(req,res)=>{
 	try{
-		const data = notificaciones.findAll();
+		const data = await notificaciones.findAll();
 		res.json({status:true,response:'Notificaciones obtenidas con exito',data});
 	}catch(error){
 		console.error(error.message);

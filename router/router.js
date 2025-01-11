@@ -35,8 +35,8 @@ router.post('/registerSecciones',crearSeccionesPost);
 
 router.get('/getNotificaciones',getNotificacion);
 router.post('/registerNotificacion',crearNoticacionPost);
-router.post('/updateNotificacion',updateNotificacion);
-router.post('/destroyNotificacion',destroyNotificacion);
+router.put('/updateNotificacion',updateNotificacion);
+router.delete('/destroyNotificacion',destroyNotificacion);
 
 
 

@@ -8,6 +8,8 @@ const secciones = require('../models/secciones.js');
 const obtenerPensumGet = async(req,res)=>{
 try{
 const data = await pensum.findAll();
+const d = JSON.stringify(data);
+console.log(`datos de la consulta a la tabla pensum ${d}`);
 res.json({status:true,response:'datos listados correctamente',data});
 }catch(error){
 console.error(error.message);
@@ -18,7 +20,7 @@ res.json({status:false,response:'error al obtener lista',error:error.message});
 const obtenerEstudiantesGet = async(req,res)=>{
 try{
 const data = await estudiantes.findAll();
-res.josn({status:true,response:'datos listados correctamente',data});
+res.json({status:true,response:'datos listados correctamente',data});
 }catch(error){
 console.error(error.message);
 res.json({status:false,response:'error al obtener lista',error:error.message});
@@ -28,7 +30,7 @@ res.json({status:false,response:'error al obtener lista',error:error.message});
 const obtenerHorarioGet = async(req,res)=>{
 try{
 const data = await horario.findAll();
-res.josn({status:true,response:'datos listados correctamente',data});
+res.json({status:true,response:'datos listados correctamente',data});
 }catch(error){
 console.error(error.message);
 res.json({status:false,response:'error al obtener lista',error:error.message});
@@ -39,7 +41,7 @@ const obtenerInscripcionGet = async(req,res)=>{
 
 try{
 const data = await inscripcion.findAll();
-res.josn({status:true,response:'datos listados correctamente',data});
+res.json({status:true,response:'datos listados correctamente',data});
 }catch(error){
 console.error(error.message);
 res.json({status:false,response:'error al obtener lista',error:error.message});
@@ -51,7 +53,7 @@ const obtenerNotasGet = async(req,res)=>{
 
 try{
 const data = await notas.findAll();
-res.josn({status:true,response:'datos listados correctamente',data});
+res.json({status:true,response:'datos listados correctamente',data});
 }catch(error){
 console.error(error.message);
 res.json({status:false,response:'error al obtener lista',error:error.message});
@@ -63,7 +65,7 @@ const obtenerSeccionesGet = async(req,res)=>{
 
 try{
 const data = await secciones.findAll();
-res.josn({status:true,response:'datos listados correctamente',data});
+res.json({status:true,response:'datos listados correctamente',data});
 }catch(error){
 console.error(error.message);
 res.json({status:false,response:'error al obtener lista',error:error.message});

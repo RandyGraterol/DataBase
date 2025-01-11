@@ -7,7 +7,7 @@ const Pensum = sequelize.define('pensum', {
     autoIncrement:true,
     primaryKey:true
   },
-  codigo: {
+  codigo:{
     type: DataTypes.STRING,
     allowNull: false,
     unique: true
@@ -42,7 +42,8 @@ const Pensum = sequelize.define('pensum', {
     allowNull: true // Permitir que sea nulo si no hay prelaciones
   }
 }, {
-  timestamps: true // Para incluir columnas de `createdAt` y `updatedAt`
+  timestamps: true, // Para incluir columnas de `createdAt` y `updatedAt`
+  freezeTableName: true
 });
 
 module.exports = Pensum;
