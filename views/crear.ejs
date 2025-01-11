@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Registrar</title>
+	
+	<script src="https://cdn.lordicon.com/lordicon.js"></script>
+	<script type="text/javascript" src='/js/alertConfig.js'></script>
+	<link rel="stylesheet" href="/css/loginRegister.css">
+</head>
+<body>
+	<div class="container">
+		<div class="form-container">
+			<div class="form-toggle">
+				<button id="loginBtn">Crear Registro</button>
+				<button id="registerBtn">Crear Prelación</button>
+			</div>
+			<div class="user">
+				<img src="/icon/registro.png" class="usuario">
+			</div>
+
+			<form id="loginForm" class="form active">
+				<h2>Crear Registro</h2>
+				<input type="text" name="codigo" placeholder="  Ingrese codigo" required>
+				<input type="text" name="asignatura" placeholder="  Ingrese asignatura" required>
+				<input type="number" name="horasT" placeholder="  Ingrese horas teóricas" required>
+				<input type="number" name="horasP" placeholder="  Ingrese Horas Practicas" required>
+				<input type="number" name="horasS" placeholder="  Ingrese Horas semanales" required>
+				<input type="number" name="uc" placeholder="  Ingrese unidades de creditos" required>
+				<input type="text" name="prelaciones" placeholder="  Ingrese prelación">
+				<button type="submit">Crear</button>
+			</form>
+
+			<form id="registerForm" class="form">
+				<h2>Crear Prelación</h2>
+
+				<label>Codigo</label>
+				<select name="codigo" required>
+					<% pensumId.forEach(item=>{ %> 
+					<option value="<%=item.codigo%>"><%=item.codigo%></option>
+					<% }) %>
+				</select>
+				
+				<label>Asignatura</label>
+				<select name="asignatura" required>
+					<% pensumId.forEach(item=>{ %>
+					 <option value="<%=item.asignatura%>"><%=item.asignatura%></option>
+					<% }) %>
+				</select>
+                <label>pensumId</label>
+				<select name="pensumId" required>
+					<%pensumId.forEach(item=>{ %>
+					<option value="<%=item.id%>"><%=item.id%></option>
+					<% }) %>
+				</select>
+
+				<button type="submit">Crear</button>
+			</form>
+
+		</div>
+	</div>
+	<script type="text/javascript" src='/js/crear.js'></script>
+	<!--<script type="text/javascript" src='/js/write.js'></script>-->
+	<script type="text/javascript" src='/js/loginRegister.js'></script>
+</body>
+</html>

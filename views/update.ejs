@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Actualizar</title>
+	
+	<script src="https://cdn.lordicon.com/lordicon.js"></script>
+	<script type="text/javascript" src='/js/alertConfig.js'></script>
+	<link rel="stylesheet" href="/css/loginRegister.css">
+</head>
+<body>
+	<div class="container">
+		<div class="form-container">
+			<div class="form-toggle">
+				<button id="loginBtn">Actualizar Pensum</button>
+				<button id="registerBtn">Actualizar Prelación</button>
+			</div>
+			<div class="user">
+				<img src="/icon/update.png" class="usuario">
+			</div>
+
+			<form id="loginForm" class="form active" data-id='<%=data.id%>'>
+				<h2>Actualizar Pensum</h2>
+				<input type="text" name="codigo" required value="<%=data.codigo%>">
+				<input type="text" name="asignatura" required value="<%=data.asignatura%>">
+				<input type="number" name="horasT" required value="<%=data.horasTeoricas%>">
+				<input type="number" name="horasP" required value="<%=data.horasPracticas%>">
+				<input type="number" name="horasS" required value="<%=data.horasSemanales%>">
+				<input type="number" name="uc"required value="<%=data.uc%>">
+				<input type="text" name="prelaciones" value="<%=data.prelaciones%>">
+				<button type="submit">Actualizar</button>
+			</form>
+
+			<form id="registerForm" class="form">
+				<h2>Actualizar Prelación</h2>
+
+				<label>Codigo</label>
+				<select name="codigo" required>
+					<% all.forEach(item=>{ %> 
+					<option value="<%=item.codigo%>"><%=item.codigo%></option>
+					<% }) %>
+				</select>
+				
+				<label>Asignatura</label>
+				<select name="asignatura" required>
+					<%all.forEach(item=>{ %>
+					 <option value="<%=item.asignatura%>"><%=item.asignatura%></option>
+					<% }) %>
+				</select>
+                <label>data</label>
+				<select name="data" required>
+					<%all.forEach(item=>{ %>
+					<option value="<%=item.id%>"><%=item.id%></option>
+					<% }) %>
+				</select>
+
+				<button type="submit">Actualizar</button>
+			</form>
+
+		</div>
+	</div>
+	<!--<script type="text/javascript" src='/js/write.js'></script>-->
+	<script type="text/javascript" src='/js/updatePass.js'></script>
+	<script type="text/javascript" src='/js/update.js'></script>
+</body>
+</html>
