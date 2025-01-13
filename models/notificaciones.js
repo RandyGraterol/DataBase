@@ -7,6 +7,10 @@ const Notificaciones = sequelize.define('notificaciones',{
 		autoIncrement:true,
 		primaryKey:true
 	},
+	titulo:{
+	type:DataTypes.STRING(15),
+	allowNull:false	
+	},
 	message:{
 		type:DataTypes.STRING(50),
 		allowNull:false
@@ -22,6 +26,10 @@ const Notificaciones = sequelize.define('notificaciones',{
 	checked:{
 		type:DataTypes.BOOLEAN,
 		allowNull:false
+	},
+	view:{
+	type:DataTypes.BOOLEAN,
+	allowNull:false
 	}
 },{timestamps:true, freezeTableName: true});
 module.exports=Notificaciones;
