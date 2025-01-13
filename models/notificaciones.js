@@ -18,6 +18,10 @@ const Notificaciones = sequelize.define('notificaciones',{
 	prioridad:{
 		type:DataTypes.STRING(20),
 		allowNull:false
+	},
+	checked:{
+		type:DataTypes.BOOLEAN,
+		allowNull:false
 	}
 },{timestamps:true, freezeTableName: true});
 module.exports=Notificaciones;
