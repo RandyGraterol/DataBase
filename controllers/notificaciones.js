@@ -3,7 +3,7 @@ const notificaciones = require('../models/notificaciones.js');
 const crearNoticacionPost = async(req,res)=>{
 	try{
 		const {titulo,message,grupoUsuario,prioridad,checked,view} = req.body;
-		await notificaciones.create({titulo,message,grupoUsuario,prioridad,checked,view});
+		await notificaciones.create({titulo,message,grupoUsuario,prioridad});
 		res.json({status:true,response:'Notificacion creada con exito'});
 	}catch(error){
 		console.error(error.message);
@@ -23,7 +23,7 @@ const getNotificacion = async(req,res)=>{
 /////////////////////////////////////////////////////////////////////////////////////
 const updateNotificacion = async(req,res)=>{
 	try{
-		const {titulo,message,grupoUsuario,prioridad,checked,view,id} = req.body;
+		const {titulo,message,grupoUsuario,prioridad,id} = req.body;
 		await notificaciones.update({titulo,message,grupoUsuario,prioridad,checked,view},{where:{id}});	
 		res.json({status:true,response:'Notificacion actualizada'});
 	}catch(error){

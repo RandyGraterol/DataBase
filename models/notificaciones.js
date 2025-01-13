@@ -25,11 +25,13 @@ const Notificaciones = sequelize.define('notificaciones',{
 	},
 	checked:{
 		type:DataTypes.BOOLEAN,
-		allowNull:false
+		allowNull:true,
+		defaultValue:false
 	},
 	view:{
 	type:DataTypes.BOOLEAN,
-	allowNull:false
+	allowNull:true,
+	defaultValue:false
 	}
 },{timestamps:true, freezeTableName: true});
 module.exports=Notificaciones;
