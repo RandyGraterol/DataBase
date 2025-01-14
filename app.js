@@ -6,9 +6,14 @@ const port= 3000;
 const app = express();
 const cors = require('cors');
 
-app.use(cors({
-    origin: 'http://localhost:5173', // Permite solicitudes desde este origen
-}));
+// Configuración de CORS
+const corsOptions = {
+  origin: 'http://localhost:5173', // Cambia esto por la URL de tu frontend
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // Permitir cookies
+};
+
+app.use(cors(corsOptions));
 
 //definir archivos estaticos 
 app.use(express.static(path.join(__dirname,'/public')));
