@@ -6,7 +6,9 @@ const port= 3000;
 const app = express();
 const cors = require('cors');
 
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:5173', // Permite solicitudes desde este origen
+}));
 
 //definir archivos estaticos 
 app.use(express.static(path.join(__dirname,'/public')));
